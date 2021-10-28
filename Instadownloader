@@ -1,0 +1,22 @@
+import instaloader #pip install instaloader
+
+
+ig = instaloader.Instaloader()
+
+req_user = input("req user name ")
+
+ig.download_profile(req_user,profile_pic_only=True)
+print("profile downloaded")
+
+post = input("would you like to download the posts of "+ req_user+" ")
+if post == "yes":
+    ig.download_profile(req_user, profile_pic=True)
+    print("tagged pics downloaded")
+else:
+     tag = input ("would you like to download the post in which " + req_user + " was tagged " )
+     if tag == "yes":
+
+        ig.download_profile(req_user, download_tagged_only=True)
+        print("tagged pics downloaded")
+     else:
+        print("Thank you")
