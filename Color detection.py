@@ -1,5 +1,5 @@
 # Python program for Detection of a
-# specific color(blue here) using OpenCV with Python
+# specific color(red here) using OpenCV with Python
 import cv2
 import numpy as np
 
@@ -15,13 +15,13 @@ while (1):
     lower_red = np.array([0, 50, 50])  # example value
     upper_red = np.array([10, 255, 255])  # example value
 
-    # Here we are defining range of bluecolor in HSV
-    # This creates a mask of blue coloured
+    # Here we are defining range of red color in HSV
+    # This creates a mask of red coloured
     # objects found in the frame.
     mask = cv2.inRange(hsv, lower_red, upper_red)
 
     # The bitwise and of the frame and mask is done so
-    # that only the blue coloured objects are highlighted
+    # that only the red coloured objects are highlighted
     # and stored in res
     res = cv2.bitwise_and(frame, frame, mask=mask)
     cv2.imshow('frame', frame)
